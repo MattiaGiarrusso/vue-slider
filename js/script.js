@@ -65,6 +65,11 @@ createApp({
                 // altrimenti la variabile risuterà pari l'indice dell'ultimo elemento
                 this.imageCounter = this.slides.length - 1;
             }
-        }
+        },
+        // bonus 1 - al click su una thumb, visualizzare in grande l'immagine corrispondente
+        // scrivo la funzione per visualizzare l'immagine al click richiamando un argomento: l'indice dell'array
+       showThisImage: function(clickIndex) {
+        this.imageCounter = clickIndex;
+       }
     }
 }).mount('#app');

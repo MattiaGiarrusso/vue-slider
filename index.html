@@ -31,6 +31,7 @@
                     class="thumb "
                     v-for="singleThumb, index in slides"
                     :class="{'active': index == imageCounter}"
+                    @click="showThisImage(index)"
                     >
                         <img :src="singleThumb.image" :alt="singleThumb">
                     </div>
