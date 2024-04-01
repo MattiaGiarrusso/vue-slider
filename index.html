@@ -27,7 +27,11 @@
                 <div class="thumbs">
                     <!-- <div class="prev" @click="prevImage"></div>
                     <div class="next" @click="nextImage"></div> -->
-                    <div class="thumb ">
+                    <div 
+                    class="thumb "
+                    v-for="singleThumb, index in slides"
+                    :class="{'active': index == imageCounter}"
+                    >
                         <img :src="singleThumb.image" :alt="singleThumb">
                     </div>
 

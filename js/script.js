@@ -42,5 +42,29 @@ createApp({
         // creo la variabile per il conteggio delle slides
         imageCounter: 0,
       }
-    }    
+    },
+    methods: {
+        // scrivo la funzione per passare alla thumb successiva
+        nextImage: function() {
+            // se la variabile imageCounter è minore dell'ultimo indice dell'array slides...
+            if (this.imageCounter < this.slides.length - 1) {
+                // la funzione incrementa di +1 la variabile conteggio
+                this.imageCounter++;
+            } else {
+                // altrimenti la variabile non incrementerà
+                this.imageCounter = 0;
+            }  
+        },
+        // scrivo la funzione per passare alla thumb precendente
+        prevImage: function(){
+            // se la variabile imageCounter è maggiore di 0 (primo elemento dell'array slides)...
+            if (this.imageCounter > 0){
+                // la funzione decrementa di -1 la variabile conteggio
+                this.imageCounter--;
+            } else {
+                // altrimenti la variabile risuterà pari l'indice dell'ultimo elemento
+                this.imageCounter = this.slides.length - 1;
+            }
+        }
+    }
 }).mount('#app');
